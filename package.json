@@ -4,7 +4,9 @@
   "description": "Uses client built as load page for electron using a meteor server",
   "main": "main.js",
   "scripts": {
-    "electron": "electron main.js"
+    "electron": "electron main.js",
+    "webpack": "set NODE_ENV=production && webpack --progress --colors",
+    "webpack-analyzer": "set NODE_ENV=production && webpack --progress --json | webpack-bundle-size-analyzer"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,19 @@
   },
   "homepage": "https://github.com/rickmed/meteor-electron-flexbot#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.37.8"
+    "electron-prebuilt": "^0.37.8",
+    "babel-core": "^6.5.1",
+    "babel-eslint": "^6.0.2",
+    "babel-loader": "^6.2.2",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
   }
 }

@@ -1,7 +1,4 @@
-import 'meteor-imports';
-import { Meteor } from 'meteor/meteor';
-import { Tracker } from 'meteor/tracker';
-import { Mongo } from 'meteor/mongo';
+import { Meteor, Tracker, Mongo } from './build/9b0601071330c01649c3fe98965faa927bf6f62a.js'
 import React from 'react';
 import ReactDOM from 'react-dom';
 
