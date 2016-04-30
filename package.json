@@ -1,0 +1,22 @@
+{
+  "name": "meteor-electron-flexbot",
+  "version": "1.0.0",
+  "description": "Uses client built as load page for electron using a meteor server",
+  "main": "main.js",
+  "scripts": {
+    "electron": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickmed/meteor-electron-flexbot.git"
+  },
+  "author": "Ricardo Medina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rickmed/meteor-electron-flexbot/issues"
+  },
+  "homepage": "https://github.com/rickmed/meteor-electron-flexbot#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^0.37.8"
+  }
+}
