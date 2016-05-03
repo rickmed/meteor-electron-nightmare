@@ -21,7 +21,7 @@ module.exports = {
     },
     plugins: [
       new MeteorImportsPlugin({
-        ROOT_URL: 'http://localhost:3000/',
+        ROOT_URL: 'http://localhost:8080/',
         DDP_DEFAULT_CONNECTION_URL: 'http://localhost:3000/',
         PUBLIC_SETTINGS: {},
         meteorFolder: 'meteor-server',
