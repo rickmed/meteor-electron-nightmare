@@ -1,27 +1,32 @@
-var webpack = require('webpack')
+var MeteorImportsPlugin = require('meteor-imports-webpack-plugin');
+var path = require('path')
 
 module.exports = {
-  entry: './entry.js',
-  output: { path: __dirname, filename: './bundle.js' },
-  module: {
-    loaders: [
-      {
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: [ 'es2015', 'react', 'stage-2'],
-          plugins: ['react-html-attrs']
+    entry: './client/index.js',
+    output: {
+      path: './client-build',
+      filename: 'bundle.js'
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          loader: 'babel',
+          include: [path.resolve('client')],
+          query: {
+            presets: [ 'es2015', 'react']
+          }
         }
-      }
+      ]
+    },
+    plugins: [
+      new MeteorImportsPlugin({
+        ROOT_URL: 'http://localhost:3000/',
+        DDP_DEFAULT_CONNECTION_URL: 'http://localhost:3000/',
+        PUBLIC_SETTINGS: {},
+        meteorFolder: 'meteor-server',
+        meteorEnv: {},
+        exclude: ['ecmascript']
+      })
     ]
-  },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    })
-  ]
-}
+};
