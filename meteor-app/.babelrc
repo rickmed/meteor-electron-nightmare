@@ -1,0 +1,9 @@
+{
+  "presets": [
+    "meteor"
+  ],
+  "plugins": [
+    "babel-plugin-react-html-attrs",
+    "react-hot-loader/babel"
+  ]
+}

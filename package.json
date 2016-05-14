@@ -1,42 +1,30 @@
 {
-  "name": "meteor-electron-flexbot",
+  "name": "meteor-electron-nightmare",
   "version": "1.0.0",
-  "description": "Uses client built as load page for electron using a meteor server",
+  "description": "Meteor app that builds the client part and loaded with electron's file:// protocol. proof of concept",
   "main": "main.js",
   "scripts": {
-    "client": "webpack-dev-server --inline --content-base client-build/",
-    "server": "(cd meteor-server && meteor)",
-    "electron": "electron main.js",
-    "webpack": "set NODE_ENV=production && webpack --progress --colors",
-    "webpack-analyzer": "set NODE_ENV=production && webpack --progress --json | webpack-bundle-size-analyzer"
+    "start": "electron main.js",
+    "start-dev": "start npm run meteor && npm run electron-dev",
+    "meteor": "(cd meteor-app && meteor --settings settings.json)",
+    "electron-dev": "nodemon --ignore meteor-app/ --exec npm run electron",
+    "electron": "electron main.js dev",
+    "rebuild": "electron-rebuild -p"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rickmed/meteor-electron-flexbot.git"
+    "url": "https://github.com/rickmed/meteor-electron-nightmare"
   },
   "author": "Ricardo Medina",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rickmed/meteor-electron-flexbot/issues"
-  },
-  "homepage": "https://github.com/rickmed/meteor-electron-flexbot#readme",
-  "devDependencies": {
-    "babel-core": "^6.5.1",
-    "babel-eslint": "^6.0.2",
-    "babel-loader": "^6.2.2",
-    "babel-plugin-react-html-attrs": "^2.0.0",
-    "babel-preset-es2015": "^6.5.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-2": "^6.5.0",
-    "electron-prebuilt": "^0.37.8",
-    "meteor-imports-webpack-plugin": "^1.0.4",
-    "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
+    "url": "NA"
   },
   "dependencies": {
-    "mobx": "^2.1.5",
-    "mobx-react": "^3.1.0",
-    "react": "^15.0.2",
-    "react-dom": "^15.0.2"
+    "nightmare-meteor": "^2.4.2"
+  },
+  "devDependencies": {
+    "electron-packager": "^7.0.1",
+    "nodemon": "^1.9.2"
   }
 }

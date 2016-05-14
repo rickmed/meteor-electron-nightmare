@@ -1,1 +1,0 @@
-import './listings/collections.js'
