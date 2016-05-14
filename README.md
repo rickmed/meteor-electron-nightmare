@@ -3,7 +3,7 @@
 
 * Meteor backend.
 * Front-end: react + mobx.
-* React hot module reloading and babel development support with gadicc:ecmascript-hot package (see render.jsx inside client folder)
+* React hot module reloading and babel development support with gadicc:ecmascript-hot package (see index.jsx inside client folder)
 * Uses [nightmare-meteor](https://github.com/rickmed/nightmare-meteor)  for web automation scripts (loaded from the meteor client as a remote module of the electron app). This way you can call meteor methods directly.
   * The other option would be to load nightmare-meteor in the main process and call meteor methods with webContents.executeJavaScript.
   * Attaching the nightmare instance to the global window object of the client in conjuction with HMReloading you can continue a script where you left it in the same instance (see client/components/input.jsx)
